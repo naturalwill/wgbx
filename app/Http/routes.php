@@ -15,6 +15,6 @@ Route::get('/', 'HomeController@index');
 Route::get('/baoxiu', 'BaoxiuController@index');
 Route::post('/baoxiu', 'BaoxiuController@store');
 
-//Route::auth();
+Route::auth();
 //Route::get('/home', 'HomeController@index');
  

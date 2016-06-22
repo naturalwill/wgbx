@@ -15,19 +15,40 @@
             {{ csrf_field() }}
 <br>
 <br>
-                <input class="form-control" name="stunum" type="text" placeholder="学号">
+                <input class="form-control" name="stunum" type="text"  placeholder="学号" value="{{ old('stunum') }}">
+                
+				@if ($errors->has('stunum'))
+					<span class="help-block">
+						<strong>{{ $errors->first('stunum') }}</strong>
+					</span>
+				@endif
 <br>
 <br>
-                <input class="form-control" name="stuname" type="text" placeholder="姓名">
+                <input class="form-control" name="stuname" type="text" placeholder="姓名" value="{{ old('stuname') }}">
+				@if ($errors->has('stuname'))
+					<span class="help-block">
+						<strong>{{ $errors->first('stuname') }}</strong>
+					</span>
+				@endif
 <br>
 <br>
-                <input class="form-control" name="phone" type="text" placeholder="联系电话">
+                <input class="form-control" name="phone" type="text" placeholder="联系电话" value="{{ old('phone') }}">
+				@if ($errors->has('phone'))
+					<span class="help-block">
+						<strong>{{ $errors->first('phone') }}</strong>
+					</span>
+				@endif
 <br>
 <br>
-                <input class="form-control" name="phone2" type="text" placeholder="短号（可选）">
+                <input class="form-control" name="phone2" type="text" placeholder="短号（可选）" value="{{ old('phone2') }}">
+				@if ($errors->has('phone2'))
+					<span class="help-block">
+						<strong>{{ $errors->first('phone2') }}</strong>
+					</span>
+				@endif
 <br>
 <br>
-                <select class="form-control" name="sushe">
+                <select class="form-control" name="sushe" id="sushe">
 					<option selected="selected" value="0">宿舍楼</option>
 					<option value="东莞1栋">东莞1栋</option>
 					<option value="东莞2栋">东莞2栋</option>
@@ -57,14 +78,19 @@
 					<option value="湛江7栋">湛江7栋</option>
 					<option value="湛江8栋">湛江8栋</option>
 				</select>
+				@if ($errors->has('sushe'))
+					<span class="help-block">
+						<strong>{{ $errors->first('sushe') }}</strong>
+					</span>
+				@endif
 <br>
 <br>
 
 				<div class="row">
 	                <div class="col-xs-8" >
-	                <input class="form-control" name="fangjian" type="text" placeholder="房间号（3位数字）">
+	                <input class="form-control" name="fangjian" type="text" placeholder="房间号（3位数字）" value="{{ old('fangjian') }}">
 	                </div><div class="col-xs-4" >
-	                <select class="form-control" name="port" >
+	                <select class="form-control" name="port" id="port">
 						<option selected="selected" value="0">端口号</option>
 						<option value="A">A</option>
 						<option value="B">B</option>
@@ -72,10 +98,25 @@
 						<option value="D">D</option>
 	                </select></div>
 	        	</div>
+				@if ($errors->has('fangjian'))
+					<span class="help-block">
+						<strong>{{ $errors->first('fangjian') }}</strong>
+					</span>
+				@endif
+				@if ($errors->has('port'))
+					<span class="help-block text-right">
+						<strong>{{ $errors->first('port') }}</strong>
+					</span>
+				@endif
 <br>
 <br>
 				
-				<textarea name="info"  rows="8"  class="form-control" placeholder="故障情况描述，简要介绍一下故障情况，如：错误代码等"></textarea>
+				<textarea name="info"  rows="8"  class="form-control" placeholder="故障情况描述，简要介绍一下故障情况，如：错误代码等" >{{ old('info') }}</textarea>
+				@if ($errors->has('info'))
+					<span class="help-block">
+						<strong>{{ $errors->first('info') }}</strong>
+					</span>
+				@endif
 <br>
 <br>
 				
@@ -96,5 +137,9 @@
         </div>
 		<script src="https://libs.orgtree.cn/jquery/2.2.4/jquery.min.js"></script>
 		<script src="https://libs.orgtree.cn/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+		$('#sushe option[value="{{ old("sushe") }}"]').attr('selected','selected');
+		$('#port option[value="{{ old("port") }}"]').attr('selected','selected');
+		</script>
     </body>
 </html>
