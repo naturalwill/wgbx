@@ -14,7 +14,7 @@ class BaoxiuController extends Controller
 	public function index()
     {
         //
-        if(preg_match('/^MicroMessenger/', $_SERVER['HTTP_USER_AGENT'])||env('APP_DEBUG',false))
+        if(preg_match('/MicroMessenger/', $_SERVER['HTTP_USER_AGENT'])||env('APP_DEBUG',false))
         {
         	return view('baoxiu');
         }
