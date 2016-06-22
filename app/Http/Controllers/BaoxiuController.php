@@ -21,6 +21,11 @@ class BaoxiuController extends Controller
         return redirect()->action('HomeController@index');
     }
     
+	public function querynews()
+    {
+        $query=Bxinfo::where('status', '=', 0)->get();
+        return json_encode($query);
+    }
 	public function store(Request $request)
     {
         //
@@ -36,6 +41,6 @@ class BaoxiuController extends Controller
     			'info'=>'required|min:2',
     	]);
     	Bxinfo::create($request->all());
-    	return '报修成功';
+    	return view('bxresult');
     }
 }

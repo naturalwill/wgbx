@@ -36,7 +36,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">GDMU学生网管</div>
+                <h1>GDMU学生网管</h1>
                 <div class="title"><img width="100%" alt="GDMU学生网管" src="{{asset('img/qrcode-gdmuwg.jpg')}}"></div>
                 
 <br>
