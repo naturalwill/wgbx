@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bxinfo extends Model
 {
-    
+
+	//protected $dateFormat = 'U';
     /**
      * The attributes that are mass assignable.
      *

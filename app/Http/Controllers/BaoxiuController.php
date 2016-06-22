@@ -21,9 +21,23 @@ class BaoxiuController extends Controller
         return redirect()->action('HomeController@index');
     }
     
-	public function querynews()
+	public function querynews(Request $request)
     {
-        $query=Bxinfo::where('status', '=', 0)->get();
+		$key=$request->input('api_key','');
+		if(empty($key )|| env('BX_API_KEY','')!=$key){
+    		return 'no access';
+		}
+    	$time= date('Y-m-d H:i:s');
+        $query=Bxinfo::where('status',  0)
+        			->where('created_at','<',$time)
+        			->get();
+        
+        if($request->input('update',false))
+        {
+        	Bxinfo::where('created_at','<',$time)
+        			->where('status', 0)
+        			->update(['status' => 1]);;
+        }
         return json_encode($query);
     }
 	public function store(Request $request)
