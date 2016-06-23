@@ -16,6 +16,9 @@ Route::get('/baoxiu', 'BaoxiuController@index');
 Route::get('/baoxiu/querynews', 'BaoxiuController@querynews');
 Route::post('/baoxiu', 'BaoxiuController@store');
 
+Route::get('/network/status', 'NetworkController@index');
+Route::post('/network/status', 'NetworkController@store');
+
 Route::auth();
 //Route::get('/home', 'HomeController@index');
  
