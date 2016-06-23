@@ -13,15 +13,18 @@ class NetworkController extends Controller
 	
 	public function index()
     {
-        //
-    	$status=Netstatus::whereRaw('id = (select max(id) from `netstatuses`)')->first();
-    	//var_dump($status->info);exit;
-    	$info=json_decode($status->info);
-    	
-    	return view('networkstatus',['info'=>$info,
-			'created_at' => $status->created_at,
-    	]);
-        return var_export($status);
+
+    	if(preg_match('/MicroMessenger/', $_SERVER['HTTP_USER_AGENT'])||env('APP_DEBUG',false))
+    	{    		
+	    	$status=Netstatus::whereRaw('id = (select max(id) from `netstatuses`)')->first();
+	    	//var_dump($status->info);exit;
+	    	$info=json_decode($status->info);
+	    	
+	    	return view('networkstatus',['info'=>$info,
+				'created_at' => $status->created_at,
+	    	]);
+    	}
+    	return redirect()->action('HomeController@index');
     }
     
 	public function store(Request $request)

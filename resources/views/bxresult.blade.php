@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <title>GDMU网络故障申报</title>
+        <title>GDMU学生网管</title>
 		<link rel="stylesheet" href="https://libs.orgtree.cn/bootstrap/3.3.6/css/bootstrap.min.css">
 	</head>
     <body>
