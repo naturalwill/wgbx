@@ -18,7 +18,7 @@ class CreateBxinfosTable extends Migration
             $table->string('stuname',32);
             $table->char('phone',11);
             $table->char('phone2',6)->default('');
-            $table->char('sushe',4);
+            $table->string('sushe',5);
             $table->char('fangjian',3);
             $table->char('port',1);
             $table->text('info');            
