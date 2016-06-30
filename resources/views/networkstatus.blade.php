@@ -12,7 +12,7 @@
 <br>
 		<h2>GDMU网络状况</h2>
 <br>
-<div class="alert alert-info" role="alert">上次检查时间: {{$created_at}}</div>
+<div class="alert alert-info" role="alert">上次更新时间: {{$created_at}}</div>
 
 @foreach ($info as $data)
 
