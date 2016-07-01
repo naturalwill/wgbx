@@ -4,17 +4,19 @@
 	<!--
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
  	 -->
  	 	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
     
     <title>GDMU学生网管</title>
 	<link rel="stylesheet" href="/libs/bootstrap/3.3.6/css/bootstrap.min.css">
     
-    @yield('style')
+    @yield('head')
 
 </head>
 <body id="app-layout">
