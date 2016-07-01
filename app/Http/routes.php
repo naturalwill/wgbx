@@ -22,6 +22,7 @@ Route::post('/network/status', 'NetworkController@store');
 Route::get('/network/news', 'Network\NewsController@index');
 Route::get('/network/news/add', 'Network\AddNewsController@index');
 Route::post('/network/news/add', 'Network\AddNewsController@store');
+Route::get('/network/talk','Network\TalkController@index');
 
 Route::auth();
 //Route::get('/home', 'HomeController@index');

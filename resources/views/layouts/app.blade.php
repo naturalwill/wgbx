@@ -75,7 +75,7 @@
     @yield('content')
 
     <!-- JavaScripts -->
-    <script src="/libs/jquery/2.2.4/jquery.min.js" integrity="sha384-ad8fe3bfc98c86a0da6d74a8f940a082a2ad76605f777a82dbf2afc930cd43a3dc5095dac4ad6d31ea6841d6b8839bc1" crossorigin="anonymous"></script>
+    <script src="/libs/jquery/2.2.4/jquery.min.js" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
     <script src="/libs/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
