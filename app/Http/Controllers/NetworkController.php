@@ -16,8 +16,8 @@ class NetworkController extends Controller
 
     	if(preg_match('/MicroMessenger/', $_SERVER['HTTP_USER_AGENT'])||env('APP_DEBUG',false))
     	{    		
-	    	$status=Netstatus::whereRaw('id = (select max(id) from `netstatuses`)')->first();
-	    	//var_dump($status->info);exit;
+	    	$status=Netstatus::orderBy('id', 'desc')->limit(1)->first();
+	    	//var_dump($status);exit;
 	    	$info=json_decode($status->info);
 	    	
 	    	return view('networkstatus',['info'=>$info,
