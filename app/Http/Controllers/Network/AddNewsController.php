@@ -25,7 +25,7 @@ class AddNewsController extends Controller
     	
     			'subject'=>'required',
     			'playtype'=>'required|max:32',
-    			'password'=>'required|regex:/^bixY6LdnJHqBujRVDURw$/',
+    			'password'=>'required|regex:/^'.env('WG_NEWS_KEY').'$/',
     			'msg'=>'required|min:2',
     	]);
     	NetworkNews::create($request->all());
