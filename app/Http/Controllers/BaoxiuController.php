@@ -18,7 +18,7 @@ class BaoxiuController extends Controller
         {
         	return view('baoxiu');
         }
-        return redirect()->action('HomeController@index');
+        return view('about',['attention'=>1]);
     }
     
 	public function querynews(Request $request)

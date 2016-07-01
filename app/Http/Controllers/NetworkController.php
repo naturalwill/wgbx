@@ -24,7 +24,7 @@ class NetworkController extends Controller
 				'created_at' => $status->created_at,
 	    	]);
     	}
-    	return redirect()->action('HomeController@index');
+        return view('about',['attention'=>1]);
     }
     
 	public function store(Request $request)
