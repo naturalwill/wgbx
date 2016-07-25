@@ -15,7 +15,8 @@ class CreateNetstatusesTable extends Migration
         Schema::create('netstatuses', function (Blueprint $table) {
             $table->increments('id');
             $table->text('info'); 
-            $table->timestamps();
+			$table->integer ( 'created_at' )->nullable ();
+			$table->integer ( 'updated_at' )->nullable ();
         });
     }
 

@@ -18,10 +18,13 @@ class NetworkController extends Controller
     	{    		
 	    	$status=Netstatus::orderBy('id', 'desc')->limit(1)->first();
 	    	//var_dump($status);exit;
+	    	if(empty($status)){
+	    		return view('about');
+	    	}
 	    	$info=json_decode($status->info);
 	    	
 	    	return view('networkstatus',['info'=>$info,
-				'created_at' => $status->created_at,
+				'updated_at' => $status->updated_at,
 	    	]);
     	}
         return view('about',['attention'=>1]);
@@ -35,7 +38,9 @@ class NetworkController extends Controller
 		}
 		
     	$raw=file_get_contents('php://input');
-    	Netstatus::create(['info'=>$raw]);
+    	Netstatus::updateOrCreate([
+    			'created_at' =>time()-43200    			
+    	], ['info'=>$raw]);
     	return $raw;
     }
 }

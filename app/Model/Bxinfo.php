@@ -8,6 +8,7 @@ class Bxinfo extends Model
 {
 
 	//protected $dateFormat = 'U';
+    protected $dateFormat = 'U';
     /**
      * The attributes that are mass assignable.
      *

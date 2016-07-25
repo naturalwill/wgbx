@@ -23,7 +23,8 @@ class CreateBxinfosTable extends Migration
             $table->char('port',1);
             $table->text('info');            
             $table->tinyInteger('status')->default(0);
-            $table->timestamps();
+			$table->integer ( 'created_at' )->nullable ();
+			$table->integer ( 'updated_at' )->nullable ();
         });
     }
 
