@@ -7,3 +7,4 @@ Homestead.json
 /.settings
 /.buildpath
 /.project
+/wgclient/config.php
