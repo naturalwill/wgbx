@@ -41,33 +41,9 @@
 <br>
                 <select class="form-control" name="sushe" id="sushe">
 					<option selected="selected" value="0">宿舍楼</option>
-					<option value="东莞1栋">东莞1栋</option>
-					<option value="东莞2栋">东莞2栋</option>
-					<option value="东莞3栋">东莞3栋</option>
-					<option value="东莞4栋">东莞4栋</option>
-					<option value="东莞5栋">东莞5栋</option>
-					<option value="东莞6栋">东莞6栋</option>
-					<option value="东莞7栋">东莞7栋</option>
-					<option value="东莞8栋">东莞8栋</option>
-					<option value="东莞9栋">东莞9栋</option>
-					<option value="东莞10栋">东莞10栋</option>
-					<option value="东莞11栋">东莞11栋</option>
-					<option value="东莞12栋">东莞12栋</option>
-					<option value="东莞13栋">东莞13栋</option>
-					<option value="东莞14栋">东莞14栋</option>
-					<option value="东莞15栋">东莞15栋</option>
-					<option value="东莞留1">东莞留1</option>
-					<option value="东莞留2">东莞留2</option>
-					<option value="湛江1栋">湛江1栋</option>
-					<option value="湛江2栋">湛江2栋</option>
-					<option value="湛江医务楼">湛江医务楼</option>
-					<option value="东莞16栋">东莞16栋</option>
-					<option value="湛江3栋">湛江3栋</option>
-					<option value="湛江4栋">湛江4栋</option>
-					<option value="湛江5栋">湛江5栋</option>
-					<option value="湛江6栋">湛江6栋</option>
-					<option value="湛江7栋">湛江7栋</option>
-					<option value="湛江8栋">湛江8栋</option>
+				    @foreach ($sushes as $data)
+						<option value="{{$data->sushe}}">{{$data->sushe}}</option>
+				    @endforeach
 				</select>
 				@if ($errors->has('sushe'))
 					<span class="help-block">

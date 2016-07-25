@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,7 +17,8 @@ class BaoxiuController extends Controller
         //
         if(preg_match('/MicroMessenger/', $_SERVER['HTTP_USER_AGENT'])||env('APP_DEBUG',false))
         {
-        	return view('baoxiu');
+        	$sushes=DB::table('bxsushes')->get();
+        	return view('baoxiu',['sushes'=>$sushes]);
         }
         return view('about',['attention'=>1]);
     }
@@ -32,7 +34,7 @@ class BaoxiuController extends Controller
         			->where('created_at','<',$time)
         			->get();
         
-        if($request->input('update',false))
+        if($request->input('update_status',false))
         {
         	Bxinfo::where('created_at','<',$time)
         			->where('status', 0)
@@ -47,12 +49,12 @@ class BaoxiuController extends Controller
 
     			'stunum'=>'required|digits:11',
     			'stuname'=>'required|max:32',
-    			'phone'=>'required|digits:11',
+    			'phone'=>'required|regex:/^1[34578][0-9]{9}$/|digits:11',
     			'phone2'=>'digits:6',
-    			'sushe'=>'required|regex:/^\D{2}/',
+    			'sushe'=>'required|exists:bxsushes',
     			'fangjian'=>'required|digits:3',
     			'port'=>'required|regex:/^[A-D]$/|max:1',
-    			'info'=>'required|min:2',
+    			'info'=>'required|min:2|max:255',
     	]);
     	Bxinfo::create($request->all());
     	return view('bxresult');
