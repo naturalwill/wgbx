@@ -29,7 +29,7 @@ class BaoxiuController extends Controller
 		if(empty($key )|| env('BX_API_KEY','')!=$key){
     		return 'no access';
 		}
-    	$time= date('Y-m-d H:i:s');
+    	$time= time();
         $query=Bxinfo::where('status',  0)
         			->where('created_at','<',$time)
         			->get();
