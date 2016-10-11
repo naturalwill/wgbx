@@ -17,8 +17,7 @@ class CreateNetworkNewsTable extends Migration
             $table->string('subject');
             $table->string('playtype');
             $table->text('msg'); 
-			$table->integer ( 'created_at' )->nullable ();
-			$table->integer ( 'updated_at' )->nullable ();
+            $table->timestamps();
         });
     }
 

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Model\Netstatus;
+use Carbon\Carbon;
+
 
 class NetworkController extends Controller
 {
@@ -38,9 +40,16 @@ class NetworkController extends Controller
 		}
 		
     	$raw=file_get_contents('php://input');
-    	Netstatus::updateOrCreate([
-    			'created_at' =>time()-43200    			
-    	], ['info'=>$raw]);
+
+    	$dt=Carbon::now();
+    	$ns=Netstatus::where('created_at','>',$dt->subHours(12)->toDateTimeString())->first();
+    	if(empty($ns)){
+    		Netstatus::Create(['info'=>$raw]);
+    	}
+    	else {
+    		$ns->info=$raw;
+    		$ns->save();
+    	}
     	return $raw;
     }
 }
