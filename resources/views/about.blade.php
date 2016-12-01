@@ -10,6 +10,6 @@
 							</span>
                         </div>
 				@endif
-                <div class="title"><img style="max-width: 430; max-height: 430;" alt="GDMU学生网管" src="{{asset('img/qrcode-gdmuwg.jpg')}}"></div>
+                <div class="title"><img class="img-responsive" style="max-width: 430; max-height: 430;" alt="GDMU学生网管" src="{{asset('img/qrcode-gdmuwg.jpg')}}" /></div>
             </div>
 @endsection
